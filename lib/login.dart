@@ -82,7 +82,9 @@ class _LoginState extends State<LoginWidget> {
           ),
           CupertinoButton(
             child: Text("Login"),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "/home");
+            },
           )
         ],
       );
