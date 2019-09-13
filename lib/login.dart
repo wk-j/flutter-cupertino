@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_cupertino/circle_image.dart';
 
 class LoginWidget extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _LoginState extends State<LoginWidget> {
       return const CupertinoTextField(
         prefix: Icon(
           CupertinoIcons.person,
-          color: CupertinoColors.lightBackgroundGray,
+          // color: CupertinoColors.lightBackgroundGray,
           size: 28,
         ),
         padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
@@ -39,7 +40,7 @@ class _LoginState extends State<LoginWidget> {
       return const CupertinoTextField(
         prefix: Icon(
           CupertinoIcons.padlock,
-          color: CupertinoColors.lightBackgroundGray,
+          // color: CupertinoColors.lightBackgroundGray,
           size: 28,
         ),
         padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
@@ -58,19 +59,7 @@ class _LoginState extends State<LoginWidget> {
       );
     }
 
-    Widget _createImage() {
-      return new Container(
-        width: 190.0,
-        height: 190.0,
-        decoration: new BoxDecoration(
-          shape: BoxShape.circle,
-          image: new DecorationImage(
-            fit: BoxFit.fill,
-            image: new AssetImage("assets/user.png"),
-          ),
-        ),
-      );
-    }
+    Widget _createImage() => CircleImage("assets/user.png");
 
     Widget _buildControls() {
       return Row(

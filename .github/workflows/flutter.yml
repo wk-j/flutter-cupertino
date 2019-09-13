@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: subosito/flutter-action@v1
+      - uses: @v1
         with:
-          flutter-version: "1.7.8+hotfix.4"
+          flutter-version: "1.9.1+hotfix.2"
 
       - name: Install dependencies
         run: flutter pub get

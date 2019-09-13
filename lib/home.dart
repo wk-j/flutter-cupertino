@@ -1,17 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'pdf_logo.dart';
+
 class HomeWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return HomeState();
-  }
-}
-
-class PdfLogo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Image(image: AssetImage("assets/pdf.png"));
   }
 }
 
