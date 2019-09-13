@@ -72,23 +72,41 @@ class _LoginState extends State<LoginWidget> {
       );
     }
 
-    return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text("Login"),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _createImage(),
-              SizedBox(
-                height: 20,
-              ),
-              _buildEmailField(),
-              _buildUserField(),
-            ],
+    Widget _buildControls() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CupertinoButton(
+            child: Text("Cancel"),
+            onPressed: () {},
           ),
-        ));
+          CupertinoButton(
+            child: Text("Login"),
+            onPressed: () {},
+          )
+        ],
+      );
+    }
+
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Login"),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _createImage(),
+            SizedBox(height: 20),
+            _buildEmailField(),
+            _buildUserField(),
+            _buildControls(),
+            SizedBox(height: 10)
+          ],
+        ),
+      ),
+    );
   }
 }
