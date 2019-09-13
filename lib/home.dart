@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cupertino/circle_image.dart';
 
 import 'pdf_logo.dart';
 
@@ -49,14 +50,14 @@ class HomeState extends State<HomeWidget> {
       ? CupertinoNavigationBar(
           leading: GestureDetector(
             child: Icon(
-              Icons.search,
+              CupertinoIcons.search,
               color: Colors.grey,
             ),
           ),
           middle: CupertinoTextField(),
           trailing: GestureDetector(
             child: Icon(
-              Icons.cancel,
+              CupertinoIcons.delete,
               color: Colors.grey,
             ),
             onTap: () {
@@ -69,7 +70,7 @@ class HomeState extends State<HomeWidget> {
       : CupertinoNavigationBar(
           leading: GestureDetector(
             child: Icon(
-              Icons.search,
+              CupertinoIcons.search,
               color: Colors.grey,
             ),
             onTap: () {
@@ -81,7 +82,7 @@ class HomeState extends State<HomeWidget> {
           ),
           middle: Text("Home"),
           trailing: Icon(
-            Icons.settings,
+            CupertinoIcons.settings,
             color: Colors.grey,
           ),
         );
@@ -127,10 +128,14 @@ class HomeState extends State<HomeWidget> {
                       .map(
                         (f) => Card(
                           child: ListTile(
-                            leading: PdfLogo(),
+                            leading: CircleImage(
+                              "assets/pdf.png",
+                              width: 40,
+                              height: 40,
+                            ),
                             title: Text(f.title),
                             subtitle: Text(f.subTitle),
-                            trailing: Icon(Icons.add_comment),
+                            trailing: Icon(CupertinoIcons.book),
                           ),
                         ),
                       )

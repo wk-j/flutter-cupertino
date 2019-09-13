@@ -13,6 +13,7 @@ class CircleImage extends StatelessWidget {
       height: height,
       decoration: new BoxDecoration(
         shape: BoxShape.circle,
+        border: Border.all(width: 0.1),
         image: new DecorationImage(
           fit: BoxFit.fill,
           image: new AssetImage(path),
