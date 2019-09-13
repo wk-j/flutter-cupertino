@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino/circle_image.dart';
 
-import 'pdf_logo.dart';
-
 class HomeWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
