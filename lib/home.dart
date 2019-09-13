@@ -18,6 +18,7 @@ class Item {
 
 class HomeState extends State<HomeWidget> {
   var _groupValue = 0;
+  var _searching = false;
 
   var items1 = [
     Item("To hot reload changes", "Xcode build done"),
@@ -44,14 +45,53 @@ class HomeState extends State<HomeWidget> {
     Item("To hot reload changes 1", "Xcode build done"),
   ];
 
+  Widget createSearchBar(searching) => searching
+      ? CupertinoNavigationBar(
+          leading: GestureDetector(
+            child: Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+          ),
+          middle: CupertinoTextField(),
+          trailing: GestureDetector(
+            child: Icon(
+              Icons.cancel,
+              color: Colors.grey,
+            ),
+            onTap: () {
+              setState(() {
+                _searching = false;
+              });
+            },
+          ),
+        )
+      : CupertinoNavigationBar(
+          leading: GestureDetector(
+            child: Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+            onTap: () {
+              setState(() {
+                _searching = true;
+                debugPrint("searching - $_searching");
+              });
+            },
+          ),
+          middle: Text("Home"),
+          trailing: Icon(
+            Icons.settings,
+            color: Colors.grey,
+          ),
+        );
+
   @override
   Widget build(BuildContext context) {
     var items = _groupValue == 0 ? items1 : items2;
 
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text("Home"),
-      ),
+      navigationBar: createSearchBar(_searching),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
