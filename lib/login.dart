@@ -45,7 +45,7 @@ class _LoginState extends State<LoginWidget> {
         ),
         padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
         clearButtonMode: OverlayVisibilityMode.editing,
-        keyboardType: TextInputType.visiblePassword,
+        keyboardType: TextInputType.text,
         autocorrect: false,
         decoration: BoxDecoration(
           border: Border(

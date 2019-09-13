@@ -10,11 +10,44 @@ class HomeWidget extends StatefulWidget {
   }
 }
 
+class Item {
+  final String title;
+  final String subTitle;
+  Item(this.title, this.subTitle);
+}
+
 class HomeState extends State<HomeWidget> {
   var _groupValue = 0;
 
+  var items1 = [
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+    Item("To hot reload changes", "Xcode build done"),
+  ];
+
+  var items2 = [
+    Item("To hot reload changes 1", "Xcode build done"),
+    Item("To hot reload changes 1", "Xcode build done"),
+    Item("To hot reload changes 1", "Xcode build done"),
+    Item("To hot reload changes 1", "Xcode build done"),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    var items = _groupValue == 0 ? items1 : items2;
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("Home"),
@@ -47,51 +80,22 @@ class HomeState extends State<HomeWidget> {
               height: 20,
             ),
             Expanded(
-              child: ListView(
-                children: <Widget>[
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: PdfLogo(),
-                      title: Text('One-line with leading widget'),
-                      subtitle: Text("2 month ago 314.5 KB"),
-                    ),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListView(
+                  children: items
+                      .map(
+                        (f) => Card(
+                          child: ListTile(
+                            leading: PdfLogo(),
+                            title: Text(f.title),
+                            subtitle: Text(f.subTitle),
+                            trailing: Icon(Icons.add_comment),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
               ),
             ),
           ],
