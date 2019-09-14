@@ -81,6 +81,7 @@ class _LoginState extends State<LoginWidget> {
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
+        leading: Icon(CupertinoIcons.home),
         middle: Text("Login"),
       ),
       child: Padding(

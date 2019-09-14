@@ -42,7 +42,7 @@ class HomeState extends State<HomeWidget> {
     Item("UIActivityType.postToTwitter", "Xcode build done"),
     Item("UIActivityType.postToWeibo,", "Xcode build done"),
     Item(
-        "I've been trying to find out a solution for several hours. I presented UIDocumentInteractionController, SFSafariViewController, UIActivityViewController, QLPreviewController. ",
+        "I've been trying to find out a solution for several hours. I presented UIDocumentInteractionController",
         "Xcode build done"),
   ];
 
