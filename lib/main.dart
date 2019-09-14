@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_cupertino/home.dart';
+import 'package:flutter_cupertino/setting_widget.dart';
 
 import 'login.dart';
 
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
         routes: {
           "/login": (context) => LoginWidget(),
           "/home": (context) => HomeWidget(),
+          "/settings": (context) => SettingWidget(),
         },
         home: Center(
           child: Text("Hello"),

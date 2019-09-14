@@ -38,10 +38,12 @@ class HomeState extends State<HomeWidget> {
   ];
 
   var items2 = [
-    Item("To hot reload changes 1", "Xcode build done"),
-    Item("To hot reload changes 1", "Xcode build done"),
-    Item("To hot reload changes 1", "Xcode build done"),
-    Item("To hot reload changes 1", "Xcode build done"),
+    Item("UIActivityType.postToFacebook", "Xcode build done"),
+    Item("UIActivityType.postToTwitter", "Xcode build done"),
+    Item("UIActivityType.postToWeibo,", "Xcode build done"),
+    Item(
+        "I've been trying to find out a solution for several hours. I presented UIDocumentInteractionController, SFSafariViewController, UIActivityViewController, QLPreviewController. ",
+        "Xcode build done"),
   ];
 
   Widget createSearchBar(searching) => searching
@@ -79,9 +81,14 @@ class HomeState extends State<HomeWidget> {
             },
           ),
           middle: Text("Home"),
-          trailing: Icon(
-            CupertinoIcons.settings,
-            color: Colors.grey,
+          trailing: GestureDetector(
+            child: Icon(
+              CupertinoIcons.settings,
+              color: Colors.grey,
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, "/settings");
+            },
           ),
         );
 
